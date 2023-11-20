@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 //    negative(image, output, col, row);
 //    mosaic(image, output, col, row, 8);
 //    binary(image, output, col, row);
-//    gammaCorrection(image, output, col, row, 2.45);
+    gammaCorrection(image, output, col, row, 0.45);
 //    bitSlicing(image, output, col, row, 1);
 //    combineBitSlicing(image, output, col, row, 7, 8);
 //    noise(image, output, col, row);
@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
 //    std::cout << "PSNR of " << combineCount << " times combined Noisy Image: " << psnr << std::endl;
 //
 //    maskAnd(image, circleImage(col, row, 200), output, col, row);
-    maskOr(image, circleImage(col, row, 200), output, col, row);
+//    maskOr(image, circleImage(col, row, 200), output, col, row);
 
     cv::Mat cvImg(row, col, CV_8UC(1));
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
         }
     }
 
-    std::string outfile = std::string(filename) + "_maskor.bmp";
+    std::string outfile = std::string(filename) + "gammaInput.bmp";
     cv::imwrite(outfile, cvImg);
 
     return 0;
